@@ -1,15 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning React</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="root">
+        
+    </div>
+
+
+    <!-- React -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+
+    <!-- ReactDOM -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
     <script>
-        let h1=document.createElement("h1");
-        h1.textContent="Hello World using JS"
-        document.body.appendChild(h1);
+        const h1=React.createElement("h1",{},"Hello World using React");
+        const root=ReactDOM.createRoot(document.getElementById("root"));
+        root.render(h1);
     </script>
-</body>
+  </body>
 </html>
