@@ -13,4 +13,4 @@ const parent = React.createElement("div", { id: "parent" }, [
   ]),
 ]);/* How hard it's to read */
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(parent);/* this replaces everything inside root */
