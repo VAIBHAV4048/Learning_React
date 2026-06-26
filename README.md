@@ -14,3 +14,6 @@
 - code splitting 
 - Differential Bundling
 - Diagonistic
+- Gives a way to host website locally on https
+- Tree shaking - remove unnecesary code
+- Different dev and prod builds
