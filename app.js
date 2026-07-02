@@ -76,7 +76,7 @@ const HeadingComponent1 = () => (
 ); */
 
 // infine loop using component - circular rendering and we can also put a component inside element
-const el=<span>Hello!</span>
+/* const el=<span>Hello!</span>
 const HeadingComponent1 = () => (
   <div id="Container">
      {jsxHeading}
@@ -89,11 +89,99 @@ const jsxHeading = (
     {el}
     <HeadingComponent1/>
   </h1>
-);
+); */
 // we can also call react function inside another like{Title()}
 // if we add any  data coming from malicious API JSX will handle it -> means it doesn't blindly execute the code , it prevents cross-site scripting also known as XSS in  real its jsx default escaping that prevents
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeading);
+/* const root = ReactDOM.createRoot(document.getElementById("root")); */
+/* root.render(<>
+<h1>HEllo!</h1>
+  <p>yes</p>
+  </>
+); */
+// if we want to render multiple elements we can use fragments
+/* root.render(<div>
+<h1>HEllo!</h1>
+  <p>yes</p>
+  </div>
+); */
+
+// how to render variable containing js Element
+/* root.render(jsxHeading
+); */
+
 // How to render functional component
-root.render(<HeadingComponent1 />);
+/* root.render(<HeadingComponent1 />); */
+
+
+/* Header
+ -Logo
+ - */
+
+const Header=()=>
+{
+  return <header>
+    <div className="logo">
+      <img alt="noimage" src="https://i.pinimg.com/736x/77/6d/4f/776d4ffaf59060ceb35c3a45b5f87059.jpg"></img>
+      <h2>Zoro</h2>
+    </div>
+    <nav className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+        <li>Cart</li>
+      </ul>
+    </nav>
+  </header>
+}
+
+const Main=()=>
+{
+  return <main className="main-content">
+<div className="search-bar">
+  <input type="search" placeholder="Search Reastaurants"></input>
+  <span className="search-icon">🔍</span>
+</div>
+<div className="content-cards">
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+<ContentCard/>
+</div>
+  </main>
+}
+
+const ContentCard=()=>
+{
+ return <div className="card">
+  <div className="content-img">
+    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/6/15/984a42a2-9927-4bda-bd3d-6d6f58596ffb_336917.JPG"></img>
+  </div>
+  <div className="content-info">
+    <h2 className="info-name">Pizza Hut</h2>
+    <p className="info-rating">⭐ 4.1</p>
+    <p className="info-cusinies">Pizza</p>
+  </div>
+  </div>
+}
+
+
+
+const AppLayout=()=>{
+return <>
+<Header/>
+<Main/>
+</>;
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout/>);
